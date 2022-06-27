@@ -1,0 +1,128 @@
+// 1. class with public access specifier
+#include<iostream>
+using namespace std;
+class employee  // declare class
+{
+	public:    // access specifier
+	int EmpNo;
+	string DeptName;
+};
+int main()
+{
+	employee Shafqat;   // creating object of class
+	Shafqat.EmpNo = 2659;   // access attributes and set values
+	Shafqat.DeptName = "Marketing";
+	
+	employee Arslan;     // create another object of same class
+	Arslan.EmpNo= 5586;
+	Arslan.DeptName = "Recovry";
+	
+	// print attributes values
+	cout<<"Employee no of Shafqat is "<<Shafqat.EmpNo<<endl;
+	cout<<"Deptarment of shafqat is "<<Shafqat.DeptName<<endl;
+	
+	cout<<"Employee no of Arslan is "<<Arslan.EmpNo<<endl;
+	cout<<"Department of Arslan is "<<Arslan.DeptName;
+	return 0;
+}
+
+// 2. class with private access specifier 
+#include<iostream>
+using namespace std;
+class student
+{
+	private:
+	void read();
+/*	you can define body of private function here 
+    {
+		cout<<"KNowledge is power";
+	}*/
+	public:
+	void display();
+};
+// or here
+void student :: read()
+{
+	cout<<"KNowledge is power";
+}
+void student :: display()
+{
+	read();
+}
+int main()
+{
+	student Ali;
+	Ali.display();
+	return 0;
+}
+
+3.
+#include<iostream>
+using namespace std;
+class student
+{
+	private:
+		int a;
+		int b;
+	public:
+		void get(int x,  int y);
+	
+		string c;	
+//		void set()
+//		{
+//			cout<<a<<endl;
+//			cout<<b;
+//		}
+};
+void student::get(int x , int y)
+{
+	a=x;
+	b=y;
+	cout<<a<<endl;
+	cout<<b;
+}
+
+int main()
+{
+	student ali;
+	ali.get(4,5);
+//	ali.set();
+	ali.c = "\nali";
+	cout<<ali.c;
+	return 0;
+}
+
+4.
+#include<iostream>
+using namespace std;
+class student
+{
+	private:
+		int fee,rollno;
+		string name;
+		void stu();
+		public:
+			void get();
+};
+void student :: stu()
+{
+	 fee =20000;
+	 rollno = 5586;
+	 name = "arslan";
+	 cout<<fee<<endl;
+	 cout<<rollno<<endl;
+	 cout<<name;
+}
+void student :: get()
+{
+	stu();
+//	cout<<fee<<endl;
+//	cout<<rollno<<endl;
+//	cout<<name;
+}
+int main()
+{
+	student arslan;
+	arslan.get();
+	return 0;
+}

@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+class employee
+{
+	int id;
+	static int count; //declaring static data member 
+	// it can be used by all objects
+	public:
+		void setdata(void)
+		{
+			cout<<"enter id of employee ";
+			cin>>id;
+			count++;
+		}
+		void getdata(void)
+		{
+			cout<<"the id of the employee is "<<id;//<<" and the employee number is "<<count<<endl;
+		}
+		//declare static method
+		//only static data  members can be accessed in static method
+	    static void displayData(void)
+		{
+		//	cout<<id; //this will throw an error b/c id is private not static
+			cout<<"and the employeee number is "<<count<<endl;
+		}
+};
+int employee :: count; // --> default value of static data member is zero
+int main()
+{
+	employee arslan,shafqat;
+	
+	arslan.setdata();
+	arslan.getdata();
+	employee::displayData(); // static method can be accessed without object
+	
+	shafqat.setdata();
+	shafqat.getdata();
+	employee::displayData();
+	return 0;
+}

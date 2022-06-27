@@ -1,0 +1,19 @@
+// table using for loop in function
+#include<iostream>
+using namespace std;
+int table(int n);
+int main()
+{
+	int x;
+	cout<<"enter 1st number";
+	cin>>x;
+	table(x);
+	return 0;
+}
+int table(int n)
+{
+	for(int a=1; a<=10; a++)
+	{
+		cout<<n<<"*"<<a<<"="<<n*a<<endl;
+	}
+}

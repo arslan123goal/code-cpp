@@ -1,0 +1,17 @@
+
+//for loop table
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b,c;             // declare data type and variables
+	cout<<"enter number";  // showing message for taking input
+	cin>>a;                // enter the number (2)
+	cout<<"enter number";
+	cin>>b;                // enter (10)
+	for(c=1;c<=b;c++)      //for loop
+	{
+		cout<<a<<"*"<<c<<"="<<a*c<<endl;
+	}
+	return 0;
+}

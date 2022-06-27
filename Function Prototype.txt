@@ -1,0 +1,22 @@
+// function prototype
+#include<iostream>
+using namespace std;
+int substraction(int a , int b);
+void g();
+int main()
+{
+	int x=6 , y=2;
+	cout<<"The result of  substraction is "<<substraction(x,y)<<endl;
+	g();
+	return 0;
+}
+int substraction(int a, int b)
+{
+	int c = a-b;
+	return c;
+}
+
+void g()
+{
+	cout<<"Good,  your program is running";
+}

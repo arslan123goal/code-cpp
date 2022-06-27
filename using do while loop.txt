@@ -1,0 +1,16 @@
+// do while loop
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b;                           
+	a=1;
+	cout<<"enetr number of table";
+	cin>>b;
+	do{
+		cout<<b<<"*"<<a<<"="<<b*a<<endl;
+		a=a+1;
+	}
+	while(a<=12);
+	return 0;
+}

@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+struct student       // declare struct
+{
+	int Roll_no;     // declareing data type
+	string name;
+	float fee;
+};
+int main()
+{
+	struct student Arslan;   // declare a struct variable 
+	Arslan.Roll_no = 52;     // accessing members 
+	Arslan.name = "Muhammad Arslan";
+	Arslan.fee = 20000;
+	
+	cout<<"The Roll_no of student(Arslan) is "<<Arslan.Roll_no<<endl;
+	cout<<"The name of student is "<<Arslan.name<<endl;
+	cout<<"The fee of student is  "<<Arslan.fee;
+	return 0;
+}

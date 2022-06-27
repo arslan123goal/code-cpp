@@ -1,0 +1,42 @@
+// Recursion 
+// 1. factorial of any number
+#include<iostream>
+using namespace std;
+int factorial(int n)
+{
+	if(n==0)
+	return 1;
+	else
+	return n*factorial(n-1);
+}
+int main()
+{
+	int a;
+	cout<<"Enter the number\n";
+	cin>>a;
+	cout<<"The factorial of "<<a<<" is "<<factorial(a);
+	return 0;
+}
+
+// 2. power of any number
+#include<iostream>
+using namespace std;
+int power(int a , int b)
+{
+	if(b<=0)
+	return 1;
+	else if(b==1)
+	return a;
+	else
+	return a*power(a,b-1);
+}
+int main()
+{
+	int x , y;
+	cout<<"Enter the number whose you want to take power\n"; 
+	cin>>x;
+	cout<<"Enter the limit of power\n";
+	cin>>y;
+	cout<<"The power of "<<x<<" is "<<power(x,y);
+	return 0;
+}
