@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class A
+{
+	friend void getdata(A x ,A y);
+	int a;
+	int b;
+	public:
+		void setdata(void)
+		{
+			a=10;
+			b=20;
+			
+		}
+		void printnumber()
+		{
+			cout<<"\nthe sum of a and b is " <<a+b;
+		}
+};
+void getdata(A x , A y)
+{
+	int c;
+	c=x.a;
+	c=y.b;
+	cout<<"value of a is "<<x.a;
+	cout<<"\nvalue of b is "<<y.b;
+}
+	int main()
+	{
+		A obj1;
+		obj1.setdata();
+		getdata(obj1,obj1);
+		obj1.printnumber();
+	return 0;	
+	}
