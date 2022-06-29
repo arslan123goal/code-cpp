@@ -29,8 +29,113 @@ void getdata(A x , A y)
 	int main()
 	{
 		A obj1;
+	//	A obj2;
 		obj1.setdata();
+	//	obj2.setdata();
+	//	getdata(obj1,obj2);
 		getdata(obj1,obj1);
 		obj1.printnumber();
 	return 0;	
 	}
+
+// example of Friend Function
+#include<iostream>
+using namespace std;
+// forward declaratioon of class B
+class B;
+class A
+{
+	int data;
+	public:
+		void setValue(int value)
+		{
+			data = value;
+		}
+	friend  void add(A , B );
+};
+class B
+{
+	int num;
+	public:
+		void setValue(int value)
+		{
+			num = value;
+		}
+	friend void add (A , B );
+};
+void add(A o1 , B o2)
+{
+	cout<<"sum of two numbers is "<<o1.data + o2.num;
+}
+int main()
+{
+	A x1;
+	x1.setValue(3);
+	
+	B x2;
+	x2.setValue(5);
+	
+	add(x1 , x2);
+	return 0;
+}
+
+// example of friend function
+#include<iostream>
+using namespace std;
+class B;
+class A
+{
+	int num1;
+	friend void exchange(A & , B &);
+	public:
+		void setValue(int a)
+		{
+			num1 = a;
+		}
+		void Display(void)
+		{
+			cout<<num1<<endl;
+		}
+};
+class B
+{
+	int num2;
+	friend void exchange(A & , B &);
+	
+	public:
+		void setValue(int b)
+		{
+			num2 = b;
+		}
+		void Display(void)
+		{
+			cout<<num2<<endl;
+		}
+};
+void exchange(A &x , B &y)
+{
+	int z = x.num1;
+	x.num1 = y.num2;
+	y.num2 = z;
+}
+int main()
+{
+	A x1;
+	B y1;
+	
+	x1.setValue(13);
+	cout<<"The value of x1 before swaping is ";
+	x1.Display();
+	
+	y1.setValue(37);
+	cout<<"The value of y1 before swapping is ";
+	y1.Display();
+	
+	exchange(x1 , y1);
+	cout<<endl;
+	cout<<"The value of x1 after swaping becomes ";
+	x1.Display();
+	cout<<"The value of y1 after swaping becomes ";
+	y1.Display();
+	return 0;
+}
