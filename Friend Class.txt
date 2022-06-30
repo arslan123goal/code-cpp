@@ -1,0 +1,38 @@
+//Friend Class
+#include<iostream>
+using namespace std;
+class A               //declare class
+{
+	private:
+		int a;
+		int b;
+		public:
+		int SetValue()    
+		{
+			a=10;
+			b=20;
+		}
+		friend class B;    /*declaration of class B in class A as a Friend Class so that Class B can access private members of class A*/
+};
+class B
+{
+	public:
+		void showA(A obj1)                              //Declare member Function
+		{
+			cout<<"The value of a is "<<obj1.a<<endl;
+		}
+		void showB(A obj2)
+		{
+			cout<<"The value of b is "<<obj2.b;
+		}
+};
+int main()
+{
+	A x;                 // x is the object of class A
+	x.SetValue();        // calling public member function of class A
+	B y;
+	//y.SetValue();
+	y.showA(x);          // calling public member function  of class B
+	y.showB(x);
+	return 0;
+}
