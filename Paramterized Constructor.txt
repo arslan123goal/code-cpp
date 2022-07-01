@@ -1,0 +1,30 @@
+// Parameterized Constructor
+#include<iostream>
+using namespace std;
+class Employee
+{
+	string name;
+	int id;
+	int salary;
+	public:
+	Employee(string n , int i , int s) //Declare Parameterized Constructor
+	{
+		name = n;
+		id = i;
+		salary = s;
+	}
+	void Show()
+	{
+		cout<<"The name of employee is "<<name<<endl;
+		cout<<"The id of employee is "<<id<<endl;
+		cout<<"The salary of employee is "<<salary<<endl<<endl;
+	}
+};
+int main()
+{
+	Employee obj1("Arslan",1001,200000);
+	obj1.Show();
+	Employee obj2("Shafqat",1002,100000);
+	obj2.Show();
+	return 0;
+}
