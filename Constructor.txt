@@ -1,0 +1,42 @@
+// Demonstration of Constructor
+#include<iostream>
+using namespace std;
+class object
+{
+	public:
+		object();        //Declaring Default Constructor
+};
+object :: object()       //Initializing Constructor
+{
+	cout<<"You just created the object"<<endl;
+}
+int main()
+{
+	object x;   // Constructor is called automatically when object of a class is created
+	return 0;
+}
+
+// example of Constructor
+#include<iostream>
+using namespace std;
+class Number
+{
+	int x,y;
+	public:
+		Number() //Default Constructor
+		{
+			x=y=100;
+		}
+		void avg()
+		{
+			cout<<"x= "<<x<<endl;
+			cout<<"y= "<<y<<endl;
+			cout<<"Average = "<<(x+y)/2<<endl;
+		}
+};
+int main()
+{
+	Number n;  //member function (number) is called automatically b/c it is a constructor
+	n.avg();   //manually callled s
+	return 0;
+}
