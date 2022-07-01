@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+class Numbers
+{
+	int a,b;
+	public:
+		Numbers(int x , int y)
+		{
+			a = x;
+			b = y;
+		}
+		
+		Numbers(int x)     // Constructor overloading
+		{
+			a = x;
+			b = 0;
+		}
+		
+		Numbers()         // Default constructor overloaded
+		{
+			a = 0;
+			b = 0;
+		}
+		void DisplayNumbers()
+		{
+			cout<<"These two numbers are "<<a<<" and "<<b<<endl;
+		}
+};
+int main()
+{
+	Numbers n1(3,6);
+	n1.DisplayNumbers();
+	
+	Numbers n2(5);
+	n2.DisplayNumbers();
+	
+	Numbers n3;
+	n3.DisplayNumbers();
+	
+	return 0;
+}
