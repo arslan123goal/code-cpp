@@ -1,0 +1,77 @@
+//Copy Constructor
+#include<iostream>
+using namespace std;
+class Number
+{
+	int a;
+	public:
+		Number() //Default constructor
+		{
+			a=0;
+		}
+		Number(int num) //Parameterized Constructor
+		{
+			a = num;
+		}
+		Number(Number &obj) //Copy Constructor
+		{
+			cout<<"Copy constructor called!!! "<<endl;
+			a = obj.a;
+		}
+		void Display()
+		{
+			cout<<"The number for this object is "<<a<<endl;
+		}
+};
+int main()
+{
+	Number x,y,z(45) , z1;
+	x.Display();
+	y.Display();
+	z.Display();
+	
+	Number n1(z); //Copy Constructor Invoked
+	n1.Display();
+	
+	z1 = z;       //Copy Constructor not called
+	z.Display();
+	return 0;
+}
+
+//Default Copy Constructor
+#include<iostream>
+using namespace std;
+class Book
+{
+	int pg,pr;
+	string name;
+	public:
+		Book()
+		{
+			cout<<"Enter Name of Book ";
+			cin>>name;
+			cout<<"Enter Pages ";
+			cin>>pg;
+			cout<<"Enter Price ";
+			cin>>pr;
+		}
+		void show()
+		{
+			cout<<"Name: "<<name<<endl;
+			cout<<"Pages: "<<pg<<endl;
+			cout<<"Price: "<<pr<<endl;
+		}
+};
+int main()
+{
+	Book b1;
+	b1.show();
+	cout<<"\nDefult Copy Constructor Called"<<endl;
+	Book b2(b1);                                       //Default Copy Constructor Invoked
+	b2.show();
+	cout<<"\nDefault Copy Constructor Called"<<endl;
+	Book b3 = b1;
+	b3.show();
+
+	return 0;
+}
