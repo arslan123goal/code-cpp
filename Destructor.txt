@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+class employee
+{
+	public:
+		employee()  //Constructor
+		{
+			cout<<"Please, create an object and i will called automatically "<<endl;  
+		}
+		~employee() //Destructor
+		{
+			cout<<"I will also called automatically and free the dynamically allocated memory"<<endl;
+		}
+};
+int main()
+{
+	employee e1; //object creating called constructor and destructor automatically
+	return 0;
+}
