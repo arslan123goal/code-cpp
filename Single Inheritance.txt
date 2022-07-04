@@ -1,0 +1,156 @@
+// Single Inheritance
+// Simple example
+#include<iostream>
+using namespace std;
+class Vehicle         //base class
+{
+	public:
+		void show(){
+		cout<<"This is Vehicle"<<endl;
+	}
+};
+//Derived class
+class Car : public Vehicle // Base class derived publically
+{
+};
+int main()
+{
+	Car obj;      // object of derived class can access member function of base class-
+	obj.show();   //-because base class is inherited in derived class
+	return 0;
+}
+
+//Single Inheritance 
+//Using Public Visibility Mode
+#include<iostream>
+using namespace std;
+class Base
+{
+	int A;
+	public:
+		int B;
+	void SetData(void)   //member function
+	{
+		A=5;
+		B=4;
+	}
+	int PrintA()       //member function
+	{
+		return A;
+	}
+	int PrintB()       //member function
+	{
+		return B;
+	}
+};
+class Derived : public Base   // inheriting base class using public visibility mode- 
+                              // -makes public members of base class accessible inside main functioon
+{
+	int C;
+	public:
+		void Process()
+		{
+		     C = B * PrintA();
+		}
+		void Display()
+		{
+			// accessing directly data member A of base class is in accessible b/c it is private
+			// that's why, we use member function(PrintA) here
+			cout<<"Value of a is "<<PrintA()<<endl; 
+			cout<<"Value of b is "<<B<<endl;
+			cout<<"Value of c is "<<C<<endl;
+		}
+};
+int main()
+{
+	Derived D1;
+	D1.SetData();
+	D1.Process();
+	D1.Display();
+	return 0;
+}
+// Single Inheritance 
+// Using Constructor and Destructor
+#include<iostream>
+using namespace std;
+class parent        //Base class
+{
+	public:
+		int a,b,c;
+};
+class child : public parent    //Inherit Base class(parent) into derived class(child)
+{
+	public:
+		child()     //Constructor
+		{
+			
+			cout<<"Enter a: ";
+			cin>>a;
+			cout<<"Enter b: ";
+			cin>>b;
+			cout<<"Enter c: ";
+			cin>>c;
+		}
+		~child()          //Destructor
+		{
+			cout<<"a="<<a<<endl;
+			cout<<"b="<<b<<endl;
+			cout<<"c="<<c<<endl;
+		}
+};
+int main()
+{
+	child obj;   //Creating object of Derived Class(child) automaticallly called constructor and Destructor
+	return 0;
+}
+
+//Single Inheritance 
+//Using Private Visibility Mode
+#include<iostream>
+using namespace std;
+class Base
+{
+	int A;
+	public:
+		int B;
+	void SetData(void)
+	{
+		A=10;
+		B=20;
+	}
+	int PrintA()
+	{
+		return A;
+	}
+	int PrintB()
+	{
+		return B;
+	}
+};
+class Derived : private Base  //using private visibility mode makes public members of base class 
+                              //- inaccessible inside the main function
+{
+	int C;
+	public:
+		void Process()
+		{
+			SetData();       
+		     C = B * PrintA();
+		}
+		void Display()
+		{// accessing directly data member A of base class is in accessible b/c it is private
+			// that's why, we use member function(PrintA) here
+			cout<<"Value of a is "<<PrintA()<<endl;
+			cout<<"Value of b is "<<B<<endl;
+			cout<<"Value of c is "<<C<<endl;
+		}
+};
+int main()
+{
+	Derived D1;
+	//D1.SetData();// D1.SetData is not accessible b/c of Private Visibility Mode
+	//that's why we have to declare this function inside derived class function(process)
+	D1.Process();
+	D1.Display();
+	return 0;
+}
