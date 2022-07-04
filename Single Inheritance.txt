@@ -154,3 +154,52 @@ int main()
 	D1.Display();
 	return 0;
 }
+//Single Inheritance 
+//using protected access specifier
+#include<iostream>
+using namespace std;
+class base
+{
+	
+	protected:  //protected acccess specifier 
+	            // data members of protected access specifier will be inherited in other child classess-
+	            //-but can't be accessible outside any class like private data members;
+		int a;  
+		int c;
+		void Data() //protected member function
+		{
+			c = 30;
+			cout<<"the value of c is "<<c;
+		}
+		private:
+		int b;	
+		public:
+		void show()
+		{
+			b=20;
+			cout<<"the value of b is "<<b<<endl;
+		}
+};
+class child:protected base
+{
+	
+	public:
+		child()
+		{
+			a= 10;    // a is inherited in derived(child) class but not accessible outside any class
+		//  b=20      //error //b is not inherited here b/c it is private 	
+		}
+	~child()
+	{
+		cout<<"the value of a is "<<a<<endl;
+		show();                                   
+		Data();                                   //calling protected member function 
+	}
+	
+};
+int main()
+{
+	child obj;
+	//obj.a // inaccessible b/c it is protected
+	return 0;
+}
