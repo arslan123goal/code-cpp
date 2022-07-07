@@ -1,0 +1,86 @@
+// MultiLevel Inheritance using constructor
+#include<iostream>
+using namespace std;
+class vehicle
+{
+	public:
+		vehicle()  // Constructor
+		{
+			cout<<"This is vehicle class."<<endl;
+		}
+};
+class fourWheeler : public vehicle  //publically inherited base class(vehicle) into child class (fourWheeler)
+{
+	public:
+	fourWheeler() // Constructor
+	{
+		cout<<"This is fourWheeler class."<<endl;
+	}
+};
+class car : public fourWheeler  //base class(fourWheeler) inherited into child class(car)
+{
+	public:
+		car() //again a constructor
+		{
+			cout<<"car has four wheels.";
+		}
+};
+int main()
+{
+	car c;  // object of class(car) can access the data members and members functions of above two classes (vehicle and fourWheeler)
+	        //creating object of class automatically call the member functions of above class b/c of constructor
+	return 0;
+}
+
+//MultiLevel Inheritance
+#include<iostream>
+using namespace std;
+class Student       // Base Class
+{
+	public:
+		int Roll_no;
+		void Set_no(int n)   //Member Function
+		{
+			Roll_no = n;
+		}
+		void Get_no(void)
+		{
+			cout<<"The roll_no is "<<Roll_no<<endl;
+		}
+};
+class Exam : public Student   // class(Exam) is derived from class(Student) 
+{                             // class(Exam) is parent class as well b/c class(Result) is inherited from class(Exam)
+public:
+		float math;
+		float physics;
+		void Set_marks(float m , float p)
+		{
+			math = m;
+			physics = p;
+		}
+		void Get_marks(void)
+		{
+			cout<<"Marks of math are "<<math<<endl;
+			cout<<"Marks of physics are "<<physics<<endl;
+		}
+};
+class Result : public Exam // inherited class(result) from class(exam)
+{
+	public:
+		void Display_Result()
+		{
+			//get_no();
+			//get_marks();
+			cout<<"your result is "<<(math+physics)/2<<"%"<<endl;
+		}
+};
+int main()
+{
+	Result r;
+	r.Set_no(1001);  //calling Member Functions
+	r.Get_no();
+	r.Set_marks(90.0 , 94.0);
+	r.Get_marks();
+	r.Display_Result();
+	return 0;
+}
