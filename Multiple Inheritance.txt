@@ -1,0 +1,95 @@
+#include<iostream>
+using namespace std;
+//First Base Class
+class Vehicle
+{
+	public:
+	Vehicle() // Constructor
+	{
+		cout<<"This is Vehicle "<<endl;
+	}
+};
+//Second Base Class
+class FourWheeler
+{
+	public:
+	FourWheeler() //Constructor
+	{
+		cout<<"This is 4 wheeler Vehicle ";
+	}
+};
+//Sub Class (Car) derived from two base classes 
+class Car : public Vehicle , public FourWheeler
+{
+	
+};
+int main()
+{
+	//Creating object of sub class (Car) will
+	//Invoke the Constructor of base classes
+	Car C;
+	return 0;
+}
+
+#include<iostream>
+using namespace std;
+// First Base Class
+class A
+{
+	protected:
+		int a;
+		public:
+		void in() //Member Function
+		{
+			cout<<"Enter value of a = ";
+			cin>>a;
+		}
+		void out()
+		{
+			cout<<"The value of a is "<<a<<endl;
+		}
+};
+// Second Base Class
+class B
+{
+	protected:
+		int b;
+		public:
+		void input()
+		{
+			cout<<"Enter value of b = ";
+			cin>>b;
+		}
+		void output()
+		{
+			cout<<"The value of b is "<<b<<endl;
+		}
+};
+// Sub Class ( C ) is inherited from two base classes
+class C : public A , public B 
+{
+	private:
+		int c;
+		public:
+		void get()
+		{
+			in();  //Declare member functios of base classes
+			input();
+			cout<<"Enter value of c = ";
+			cin>>c;
+		}
+		void show()
+		{
+			out();  //Declare member functions  of base classes
+			output();
+			cout<<"The value of c is "<<c<<endl;
+			cout<<"The sum of these values is "<<a + b + c;
+		}
+};
+int main()
+{
+	C obj;
+	obj.get();
+	obj.show();
+	return 0;
+}
