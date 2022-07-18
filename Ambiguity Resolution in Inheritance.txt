@@ -1,0 +1,38 @@
+// Ambiguity Resolution in inheritance
+#include<iostream>
+using namespace std;
+class Base1
+{
+	public:
+		void greet()   // Member Function
+		{
+			cout<<"Good Morning"<<endl;
+		}
+};
+class Base2
+{
+	public:
+		void greet()   // Member Function
+		{
+			cout<<"Good Afternoon"<<endl;
+		}
+};
+class Derived : public Base1 , public Base2
+{
+	public:
+		void say()   // Member Function
+		{
+			Base1 :: greet();    // Declaration of Member Function of Base1 class // using Scope Resolution Operator
+		}
+};
+int main()
+{
+	Base1 obj1;
+	obj1.greet();
+	
+	Base2 obj2;
+	obj2.greet();
+	
+	Derived der;
+	der.say();
+}
