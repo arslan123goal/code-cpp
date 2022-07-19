@@ -1,0 +1,68 @@
+//  virtual base class
+#include<iostream>
+using namespace std;
+class Student
+{
+	protected:
+		int roll_no;
+		public:
+		void set_roll_no(int a)  // Member Function
+		{
+			roll_no = a;
+		}
+		void print_roll_no()
+		{
+			cout<<"The roll no of student is "<<roll_no<<endl;
+		}
+};
+class Test : virtual public Student   //Virtual key word use with parent class to make it virtual
+{
+	protected:
+		float math , physics;
+		public:
+		void set_marks(float m1 , float m2)
+		{
+			math = m1;
+			physics = m2;
+		}
+		void print_marks()
+		{
+			cout<<"Math = "<<math<<endl<<"Physics = "<<physics<<endl;
+		}
+};
+class Sports : virtual public Student  
+{
+	protected:
+		int score;
+		public:
+		void get_score(int x)
+		{
+			score = x;
+		}
+		void print_score()
+		{
+			cout<<"The score of game is "<<score<<endl;
+		}
+};
+class Result : public Test , public Sports
+{
+	private:
+		float total;
+	public:
+		void display(void)
+		{
+			total = math + physics + score;
+			print_roll_no();
+			print_marks();
+			print_score();
+			cout<<"Total marks = "<<total<<endl;
+		}
+};
+int main()
+{
+	Result Arslan;
+	Arslan.set_roll_no(5586);
+	Arslan.set_marks(72.5 , 49.5);
+	Arslan.get_score(9);
+	Arslan.display();
+}
