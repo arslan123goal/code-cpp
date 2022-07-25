@@ -1,0 +1,40 @@
+//Pointers to Objects and Arrow Operator 
+#include<iostream>
+using namespace std;
+class Complex
+{
+	int real , imaginary;
+	public:
+		void setData(int a , int b)
+		{
+			real = a;
+			imaginary = b;
+		}
+		void getData()
+		{
+			cout<<"The value of real number is "<<real<<endl;
+			cout<<"The value of imaginary number is "<<imaginary<<endl;
+		}
+};
+int main()
+{
+    Complex c1;
+    // Complex *ptr = &c1;
+    
+    Complex *ptr = new Complex;
+    // (*ptr).setData(1, 54); is exactly same as
+    ptr->setData(1, 54);
+    // (*ptr).getData(); is as good as
+    ptr->getData();
+
+    Complex *ptr1 = new Complex[4];
+    ptr1->setData(1, 54);
+    ptr1->getData();
+
+    (ptr1 + 1)->setData(2, 3);
+    (ptr1 + 1)->getData();
+    return 0;
+	
+	
+    return 0;
+}
