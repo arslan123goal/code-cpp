@@ -1,0 +1,38 @@
+// Array of Objects Using Pointers
+#include<iostream>
+using namespace std;
+class ImtiazShoppingMall
+{
+	int id,price;
+	public:
+	void setData(int a , int b)
+	{
+		id = a;
+		price = b;
+	}
+	void getData()
+	{
+		cout<<"The id of this item is "<<id<<endl;
+		cout<<"The price of this item is "<<price<<endl;
+	}
+};
+int main()
+{
+	ImtiazShoppingMall *ptr = new ImtiazShoppingMall[3];
+	ImtiazShoppingMall *p = ptr;
+	int x,y,i;
+	for(i=0 ; i<3 ; i++)
+	{
+		cout<<"Enter id and price of item "<<i+1<<endl;
+		cin>>x>>y;
+		(*ptr).setData(x,y);
+		ptr++;
+	}
+	for(i=0 ; i<3 ; i++)
+	{
+		cout<<"item number "<<i+1<<endl;
+		p -> getData();
+		p++;
+	}
+	return 0;
+}
