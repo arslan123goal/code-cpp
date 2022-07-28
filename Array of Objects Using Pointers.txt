@@ -36,3 +36,35 @@ int main()
 	}
 	return 0;
 }
+
+#include<iostream>
+using namespace std;
+class person
+{
+	char name;
+	public:
+		void get()
+		{
+			cout<<"enter name = ";
+			cin>>name;
+		}
+		void show()
+		{
+			cout<<"your name is "<<name<<endl;
+		}
+};
+int main()
+{
+	person *ptr[5]; // Declare array of pointer
+	int i;
+	for(i=0 ; i<5 ; i++)
+	{
+		ptr[i] = new person;
+		ptr[i] -> get();
+	}
+	for(i=0 ; i<5 ; i++)
+	{
+		ptr[i] -> show();
+	}
+	return 0;
+}
