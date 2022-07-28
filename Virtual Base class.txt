@@ -1,3 +1,35 @@
+//Simple program of Virtual Base Class
+#include<iostream>
+using namespace std;
+class Base1
+{
+	protected:
+		int n;
+};
+class Base2 : virtual public Base1
+{
+	
+};
+class Base3 : virtual public Base1
+{
+	
+};
+class Base4 : public Base2 , public Base3
+{
+	public:
+	void set()
+	{
+		n=10;
+		cout<<"n = "<<n;
+	}
+};
+int main()
+{
+	Base4 b4;
+	b4.set();
+	return 0;
+}
+
 //  virtual base class
 #include<iostream>
 using namespace std;
