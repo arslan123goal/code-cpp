@@ -1,0 +1,88 @@
+//pointers to derived class
+#include<iostream>
+using namespace std;
+class Base
+{
+	public:
+	int a;
+	void display()
+	{
+		cout<<"variable of base class "<<a<<endl;
+	}
+};
+class Derived :public Base
+{
+	public:
+		int x;
+		void display()
+		{
+			cout<<"variable of derived class "<<x<<endl;
+		}
+};
+int main()
+{
+	Base *ptr;       // base class pointer
+	Base base_obj;   // base class object
+	
+	Derived der_obj; // derived class object
+	
+	ptr = &der_obj;  // pointing base class pointer to derived class object
+	
+	ptr -> a = 10;
+	ptr ->display();  //pointer executes member function of base class 
+	
+	// ptr -> x=20;  // this will throw an error  //base class pointer can't access derived class data member
+	
+	Derived *der_ptr ;      // derived class pointer
+	der_ptr = & der_obj;    // pointing derived class pointer to derived class object
+	der_ptr -> x=20;
+	der_ptr -> display();
+	return 0;
+}
+
+// Simple program of pointers and inheritance
+#include<iostream>
+using namespace std;
+class A
+{
+	public:
+		void show()
+		{
+			cout<<"Parent class A "<<endl;
+		}
+};
+class B : public A
+{
+	public:
+		void show()
+		{
+			cout<<"Child class B"<<endl;
+		}
+};
+class C : public A
+{
+	public:
+		void show()
+		{
+			cout<<"Child class C"<<endl;
+		}
+};
+int main()
+{
+	A obj1;
+	B obj2;
+	C obj3;
+	
+	A *ptr;
+	// here pointer will point to the objects of all three classes
+	// but it will only execute member function of base class(A) 3 Times
+	ptr = &obj1;
+	ptr -> show();
+	
+	ptr = &obj2;
+	ptr -> show();
+	
+	ptr = &obj3;
+	ptr -> show();
+	return 0;
+}
