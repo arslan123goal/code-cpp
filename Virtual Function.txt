@@ -1,0 +1,65 @@
+// Simple Program of Virtual Function
+#include<iostream>
+using namespace std;
+class A
+{
+	public:
+		virtual void show()
+		{
+			cout<<"Parent class A..."<<endl;
+		}
+};
+class B : public A
+{
+	public:
+		void show()
+		{
+			cout<<"Child class B..."<<endl;
+		}
+};
+int main()
+{
+	A obj1;
+	B obj2;
+	
+	A *ptr;
+	ptr = &obj1;
+	ptr -> show();
+	
+	ptr = &obj2;
+	ptr -> show();
+	return 0;
+}
+
+// Virtual Function
+#include<iostream>
+using namespace std;
+class Base
+{
+	public:
+		int a;
+		virtual void show() // defined function using keyword virtual
+		{
+			cout<<"Variable of base class = "<<a<<endl;
+		}
+};
+class Derived : public Base
+{
+	public:
+		int x=10;
+		void show()
+		{
+			cout<<"Variable of derived class = "<<x<<endl;
+		}
+};
+int main()
+{
+	Base base_obj;
+	Base *ptr;
+	
+	Derived der_obj;
+	ptr = &der_obj;
+
+	ptr -> show(); // this will execute derived class member function
+	return 0;
+}
