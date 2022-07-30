@@ -1,0 +1,99 @@
+// Simple Program of Pure Virtual Function
+#include<iostream>
+using namespace std;
+class Parent
+{
+	public:
+		virtual void show()=0;
+};
+class Child1 : public Parent
+{
+	public:
+		void show()
+		{
+			cout<<"Child1 class..."<<endl;
+		}
+};
+class Child2 : public Parent
+{
+	public:
+		void show()
+		{
+			cout<<"Child2 class..."<<endl;
+		}
+};
+int main()
+{
+	Parent *ptr[2];
+	ptr[0] = new Child1;
+	ptr[1] = new Child2;
+	
+	ptr[0] -> show();
+	ptr[1] -> show();
+	return 0;
+}
+
+//Pure Virtual Function
+#include<iostream>
+using namespace std;
+class cwh
+{
+	protected:
+	string title;
+	float rating;
+	public:
+		cwh(string s , float r)
+		{
+			title = s;
+			rating = r;
+		}
+		virtual void display()=0; // do-nothing function --> pure Virtual Function
+		
+};
+class cwhVideo : public cwh
+{
+	protected:
+	float Video_length;
+	public:
+		cwhVideo(string s , float r , float vl) : cwh(s,r)
+		{
+			Video_length = vl;
+		}
+		void display()
+		{
+			cout<<"Title of video is "<<title<<endl;
+			cout<<"rating of video is "<<rating<<" out of 5 stars "<<endl;
+			cout<<"video length is "<<Video_length<<" minutes"<<endl;
+		}
+};
+class cwhText : public cwh
+{
+	protected:
+		int words;
+		public:
+			cwhText(string s , float r, int wd) : cwh(s,r)
+			{
+				words = wd;
+			}
+			void display()
+			{
+			cout<<"Title of video is "<<title<<endl;
+			cout<<"rating of video is "<<rating<<" out of 5 stars "<<endl;
+			cout<<"total words in this video are "<<words<<" words"<<endl;
+			}
+};
+int main()
+{
+	cwhVideo djVideo("c++", 4.9, 23.59);
+//	djVideo.display();
+	
+	cwhText djText("python", 4.99, 100);
+	
+	cwh* tuts[2];
+	tuts[0] = & djVideo;
+	tuts[0] -> display();
+	
+	tuts[1] = &djText;
+	tuts[1] -> display();
+	return 0;
+}
