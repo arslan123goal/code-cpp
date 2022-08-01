@@ -1,0 +1,28 @@
+// Write operation in file
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+	string st = "upcoming" ;
+	// Opening files using constructor and writing on it
+	ofstream obj("E://Snipping Tool//WR DATA.txt");     // Write operation
+	obj << st;
+	
+	return 0;
+}
+
+// Read operation in file
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    string s;
+    // Opening files using constructor and reading it
+	ifstream obj("E://Snipping Tool//WR DATA.txt");  // Read operator
+	obj >>s;
+	cout<<s;
+	
+	return 0;
+}
