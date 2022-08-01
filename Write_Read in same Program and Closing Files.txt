@@ -1,0 +1,22 @@
+//Read/Write in the Same Program & Closing Files 
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+	string st="Arslan is my name";
+	ofstream obj1("E://Snipping Tool//WR DATA.txt");
+	
+	obj1<<st;
+	//disconnecting our file
+	obj1.close();
+	
+	string s;
+	ifstream obj2("E://Snipping Tool//WR DATA.txt");
+//	obj2>>s;
+	getline(obj2,s);
+	cout<<s;
+	//disconnecting our file
+	obj2.close();
+	return 0;
+}
