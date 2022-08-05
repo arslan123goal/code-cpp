@@ -1,0 +1,95 @@
+//class template
+#include<iostream>
+using namespace std;
+template<class t>
+class test
+{
+	t a;
+	public:
+		test(t b)
+		{
+			a=b;
+		}
+		void display()
+		{
+			cout<<"The value of your entered number is "<<a<<endl;
+		}
+};
+int main()
+{
+	test <int> t(3);
+	t.display();
+	
+	test <float> t1(6.9);
+	t1.display();
+	return 0;
+}
+
+//class template with multiple parameters
+#include<iostream>
+using namespace std;
+template <class c1 , class c2 , class c3>
+class C
+{
+	c1 a;
+	c2 b;
+	c3 c;
+	public:
+		void show(c1 x , c2 y , c3 z)
+		{
+			a=x;
+			b=y;
+			c=z;
+		}
+		void display()
+		{
+			cout<<"My name is "<<a<<endl;
+			cout<<b<<" is a integer number"<<endl;
+			cout<<c<<" is a floating point number"<<endl;
+		}
+};
+int main()
+{
+	C <string , int , float> obj;
+	obj.show("Arslan",3,3.4);
+	obj.display();
+	return 0;
+}
+
+//class template with default parameters
+#include<iostream>
+using namespace std;
+template<class t1=int , class t2=float, class t3=char, class t4=string>
+class code
+{
+	public:
+	t1 a;
+	t2 b;
+	t3 c;
+	t4 d;
+	qella(t1 x, t2 y, t3 z,t4 w)
+	{
+		a=x;
+		b=y;
+		c=z;
+		d=w;
+	}
+	void display()
+	{
+		cout<<"a= "<<a<<endl;
+		cout<<"b= "<<b<<endl;
+		cout<<"c= "<<c<<endl;
+		cout<<"d= "<<d<<endl;
+	}
+};
+int main()
+{
+	code<> c1(12,6.9,'x',"strinig");
+	c1.display();
+	cout<<endl;
+	
+	code<char,string,float,int> c2('q',"struggle",12.9,13);
+	c2.display();
+	return 0;
+}
+
