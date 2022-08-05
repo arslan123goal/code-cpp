@@ -1,0 +1,88 @@
+// Template of function
+#include<iostream>
+using namespace std;
+template<class t >
+t show(t a )
+{
+	cout<<a<<endl;
+}
+int main()
+{
+//	string s="ali";
+//	cout<<show(s);
+	show(1000);
+	show(6.9);
+	show("ali");
+	show('x');
+	
+	return 0;
+}
+
+//Function template with multiple parameters
+#include<iostream>
+using namespace std;
+template<class t , class t1>
+t maxi(t a , t1 b)
+{
+	t c = (a+b);
+	return c;
+}
+int main()
+{
+	int x;
+	x = maxi(5,2);
+	cout<<"sum of "<<x<<endl;
+	
+	cout<<maxi(5,5);
+	return 0;
+}
+
+// Template of function outside the class
+#include<iostream>
+using namespace std;
+template<class X>
+class coder
+{
+	public:
+		X data;
+		coder(X a)
+		{
+			data = a;
+		}
+		void display();
+};
+template<class X>
+void coder<X> :: display()
+{
+	cout<<data<<endl;
+}
+int main()
+{
+	coder<int> obj(5);
+	cout<<obj.data<<endl;
+	
+	obj.display();
+	return 0;
+}
+
+//Overloading template function
+#include<iostream>
+using namespace std;
+void func(int a)
+{
+	cout<<"non-templatized function "<<a<<endl;
+}
+template <class Y>
+Y func(Y a)
+{
+	cout<<"templatized function "<<a<<endl;
+}
+int main()
+{
+	func(4);  //exact match // takes the highest priority //non-templatised function
+
+	func(6.9); //templatised function
+	func('Y');
+	func("string");
+	return 0;
+}
