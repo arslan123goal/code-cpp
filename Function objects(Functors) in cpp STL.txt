@@ -1,0 +1,16 @@
+// function objects in STL
+#include<iostream>
+#include<functional>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int arr[] = {12,3,7,78,69,5};
+//	sort(arr,arr+6); //output in ascending order
+	sort(arr,arr+6,greater<int>());   // output in descending
+	for(int i=0; i<6 ; i++)
+	{
+		cout<<arr[i]<<" ";
+	}
+	return 0;
+}
