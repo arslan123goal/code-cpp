@@ -1,0 +1,89 @@
+// Pointer
+#include<iostream>
+using namespace std;
+int main()
+{
+int a=10;
+int *ptr;          // creates a pointer(ptr) using key word asterisk(*)
+ptr= &a;           // pointer(ptr) stores memory address of variavle(a) using key word ampersand(&)
+cout<<ptr<<endl;   // print address
+cout<<&a<<endl;
+cout<<a<<endl;     // print value 
+cout<<*ptr<<endl;
+return 0;
+}
+
+
+// Pass by value using pointer
+#include<iostream>
+using namespace std;
+
+int cube(int);     // Function Prototype 
+int main()
+{
+    int a=5;
+    cout<<"The value of number is "<<a<<endl;
+
+    cout<<"The cube of number is "<<cube(a)<<endl;
+return 0;
+}
+
+
+int cube(int n)
+{
+    return n*n*n;
+}
+
+// Pass by reference using pointer
+#include<iostream>
+using namespace std;
+int cube(int *ptr);
+int main()
+{
+    int a=5;
+    cout<<"The value of number is "<<a<<endl;
+
+    cout<<"The cube of number is "<<cube(&a)<<endl;
+return 0;
+}
+int cube(int *ptr)
+{
+    return (*ptr) * (*ptr) * (*ptr);
+}
+
+// Array and pointers
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int marks[] = {23, 45, 56, 89};   // declaring and initializing an array
+
+    cout<<"These are marks"<<endl;
+    cout<<marks[0]<<endl;
+    cout<<marks[1]<<endl;
+    cout<<marks[2]<<endl;
+    cout<<marks[3]<<endl;
+
+    // you can also take same output using for loop
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     cout<<"The value of marks "<<i<<" is "<<marks[i]<<endl;
+    // }
+
+    // accessing values in array using pointer
+    int* p = marks;
+    cout<<*(p++)<<endl;
+    // cout<<*(++p)<<endl;     
+    cout<<*(p++)<<endl;
+    cout<<*(p++)<<endl;
+    cout<<*(p++)<<endl;
+
+    // you can also take same output using this 
+    // cout<<"\nThe value of *p is "<<*(p+0)<<endl;
+    // cout<<"The value of *(p+1) is "<<*(p+1)<<endl;
+    // cout<<"The value of *(p+2) is "<<*(p+2)<<endl;
+    // cout<<"The value of *(p+3) is "<<*(p+3)<<endl; 
+
+return 0;
+}
