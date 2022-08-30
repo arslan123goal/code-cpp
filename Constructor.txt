@@ -37,6 +37,6 @@ class Number
 int main()
 {
 	Number n;  //member function (number) is called automatically b/c it is a constructor
-	n.avg();   //manually callled s
+	n.avg();   //manually called
 	return 0;
 }
