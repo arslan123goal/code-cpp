@@ -1,0 +1,60 @@
+// Evaluate the size of data type
+// when operand is of data type
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    cout<<"Size of integer data type:"<<sizeof(int)<<endl;
+    cout<<"Size of long data type:"<<sizeof(long)<<endl;
+    cout<<"Size of float data type:"<<sizeof(float)<<endl;
+    cout<<"Size of double data type:"<<sizeof(double)<<endl;
+    cout<<"Size of char data type:"<<sizeof(char)<<endl;
+return 0;
+}
+
+// when operand is of class type
+#include<iostream>
+using namespace std;
+class Base
+{
+    int a,b;
+};
+int main()
+{
+    Base b;
+    cout<<"Size of Base class is: "<<sizeof(b);   // 4+4=8
+return 0;
+}
+
+// when operand is of array type
+#include<iostream>
+using namespace std;
+int main()
+{
+    int arr[] = {1,20,11,34};
+    cout<<"Size of array is: "<<sizeof(arr)<<endl;
+return 0;
+}
+
+// when operand is of pointer type
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    // int n = 10;
+    // int *p = &n;
+    int *p = new int(10);
+    cout<<"Size of p is: "<<sizeof(p)<<endl;
+    cout<<"Size of *p is: "<<sizeof(*p)<<endl;
+
+    char *ptr2 = new char('c');  
+   cout <<"size of ptr2 : " <<sizeof(ptr2)<< std::endl;  
+   cout <<"size of *ptr2 : "<<sizeof(*ptr2)<< std::endl;  
+
+   double *ptr3=new double(12.78);  
+    cout <<"size of ptr3 : " <<sizeof(ptr3)<< std::endl;  
+   cout <<"size of *ptr3 : "<<sizeof(*ptr3)<< std::endl;  
+return 0;
+}
