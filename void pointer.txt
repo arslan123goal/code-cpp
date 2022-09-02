@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    void *ptr;
+    int a=9;
+    ptr=&a;
+    cout<<&a<<endl;
+    cout<<ptr;
+return 0;
+}
