@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a=10;
+    int &value=a;
+    cout<<value<<endl;
+    cout<<&value;
+return 0;
+}
+
+// #include<iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int a=70;
+//     int &b=a;
+//     int &c=a;
+//     cout<<a<<endl;
+//     cout<<b<<endl;
+//     cout<<c<<endl;
+// return 0;
+// }
