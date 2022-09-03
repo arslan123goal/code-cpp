@@ -1,0 +1,34 @@
+// Function pointer stores the address of function
+
+// #include<iostream>
+// using namespace std;
+// int add(int a,int b)
+// {
+//     return a+b;
+// }
+// int main()
+// {
+//     int(*ptr)(int,int); // Function pointer declaration  // supplied parameter list(int,int)
+//     ptr=add;           // storing the address of add in ptr
+//     int c =ptr(5,5);
+//     cout<<"sum = "<<c;
+// return 0;
+// }
+
+#include<iostream>
+using namespace std;
+void printname(char *name)
+{
+    cout<<"Name is "<<name;
+}
+int main()
+{
+    char s[10];           // array declaration 
+    void(*ptr)(char*);   // function pointer declaration
+    ptr = printname;
+    cout<<"Enter the name of the person "<<endl;
+    cin>>s;
+    // cout<<s<<endl;
+    ptr(s);      // calling printname() function using function pointer(ptr)
+return 0;
+}
