@@ -1,0 +1,10 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int *p = new int(5);
+    cout<<"The value of *p before applying the free() function "<<*p<<endl;
+    free(p);    // de-allocate the memory dynamically.
+    cout<<"The value of *p after applying the free() function "<<*p<<endl;  // print default value
+return 0;
+}
