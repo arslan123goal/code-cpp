@@ -1,0 +1,83 @@
+#include<iostream>
+#include<string>
+#include<algorithm>  // this header file includes sort function line=79
+using namespace std;
+
+int main()
+{
+    string str;
+
+    // cin>>str;
+    // cout<<str;
+
+    // string str1(5,'n');
+    // cout<<str1<<endl;
+
+    // getline(cin,str);
+    // cout<<str;
+
+    // append two strings
+    // string s1="fam";
+    // string s2="ily";
+    // s1.append(s2);
+    // cout<<s1<<endl;
+    // cout<<s1+s2<<endl;
+    // cout<<s1[1];
+
+    // string abc="anday garama garam anday desi garam anday";
+    // abc.clear();
+    // cout<<abc<<endl;
+
+    // string s1="abc";
+    // string s2="abc";
+    // if (!s1.compare(s2))
+    // // if (s1.compare(s2)==0)
+    // {
+    //     cout<<"strings are equal"<<endl;
+    // }
+    
+    // cout<<s2.compare(s1) << endl;
+
+    // check string is empty or not
+    // string s="abc";
+    // cout<<s<<endl;
+    // s.clear();
+    // if (s.empty())
+    // {
+    //     cout<<"string is empty";
+    // }
+
+    // string strng = "poyon oil";
+    // strng.erase(3,1);
+    // cout<<strng<<endl;
+
+    // cout<<strng.find("yon")<<endl;
+
+    // strng.insert(9," lylo");
+    // cout<<strng<<endl;
+
+    // cout<<strng.size() << endl;
+    // cout<<strng.length() <<endl;
+    // for (int i = 0; i < strng.length(); i++)
+    // {
+    //     cout<<strng[i]<<" ";
+    // }
+    
+    // cout<<strng.substr(2,3);
+
+    // convert string into integer
+    // string sg = "123";
+    // int c = stoi(sg);
+    // cout<<c<<endl;
+    // cout<<c+2<<endl;
+
+    // convert integer into string
+    // int x=123;
+    // cout<<to_string(x)<<endl;
+    // cout<<to_string(x) + "9"<<endl;
+
+    string a = "zyadfecbx";
+    sort(a.begin() , a.end());
+    cout<<a<<endl;
+return 0;
+}
