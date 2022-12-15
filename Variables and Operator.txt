@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Data Type and Operator</title>
+    <script>
+        var a = 13;
+        var b = "Arslan";
+        var c = 14.72;
+        console.log(c);
+
+        c = -c;       // unary operator
+        console.log(c);
+
+        c = 12 + 34;
+        console.log(c);
+
+        var num1 = 2;
+        var num2 = 9;
+        // Arithmetic operators
+        console.log("The value of num1 + num2 is "+ (num1 + num2));
+        console.log("The value of num1 - num2 is "+ (num1 - num2));
+        console.log("The value of num1 * num2 is "+ (num1 * num2));
+        console.log("The value of num1 / num2 is "+ (num1 / num2));
+        console.log("The value of num1 ** num2 is "+ (num1 ** num2));
+
+        // increment operator
+        // console.log("The value of num1 ++ is "+ (num1 ++));
+        // console.log("The value of num1 is "+ (num1));
+        // console.log("The value of ++ num1 is "+ (++ num1));
+
+        // decrement operator
+        console.log("The value of num1-- is "+ (num1--));
+        console.log("The value of num1 is "+ (num1));
+        console.log("The value of --num1 is "+ (--num1));
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h3>This is a heading</h3>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At rem minus ad soluta excepturi, delectus aspernatur aut ratione eius, cumque harum quaerat tempore quibusdam consequuntur! Provident officia saepe ducimus in error! Nisi voluptatum quidem cum. Natus maiores quis libero nulla corporis, voluptatibus tempore perspiciatis debitis ea. Illum pariatur minus libero similique provident ipsum ullam animi ex nisi tempora repellendus maxime magnam vitae, fugiat enim natus tenetur nam!</p>
+        </div>
+    </div>
+</body>
+</html>
