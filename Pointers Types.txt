@@ -1,0 +1,60 @@
+// Types of pointers
+
+// 1 --> Wild pointer
+#include<iostream>
+using namespace std;
+int main()
+{
+    // wild pointer, declared but initialized
+    int *ptr;
+    cout<<ptr<<" "<<*ptr<<endl;
+return 0;
+}
+
+// 2 --> Null pointer
+#include<iostream>
+using namespace std;
+int main()
+{
+    int *ptr = NULL;
+    // int *p1 = NULL;
+    int *p1 = 0;
+    int *p2 = '\0';
+    cout<<ptr<<" "<<p1<<" "<<p2<<endl;
+    // cout<<*ptr<<endl;
+return 0;
+}
+
+// 3 -->Dangling pointer
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int *ptr = NULL;
+    // int *ptr;
+    {
+        int x = 10;
+        int *ptr = &x;
+    }
+    // cout<<x<<endl;
+    cout<<ptr<<endl;
+return 0;
+}
+
+// 4 --> Void pointer
+#include<iostream>
+using namespace std;
+int main()
+{
+    float f = 10.2;
+    int x = 10;
+    void *ptr = &f;
+    ptr = &x;
+    // cout<<*ptr<<endl; // void pointer can't be dereferenced without type casting
+
+    int *integerPointer = (int *) ptr;  // Type casting to integer pointer
+    // float *integerPointer = (float *) ptr;
+    cout<<*integerPointer<<endl;
+return 0;
+}
