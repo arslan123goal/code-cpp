@@ -34,7 +34,63 @@ Node* searchInBST(Node* root, int key)
     {
         return searchInBST(root->right, key);
     }
+}// Time Complexity --> O(logn)
+
+
+Node* inorderSucc(Node* root)
+{
+    Node* curr = root;
+    while(curr && curr->left != NULL)
+    {
+        curr = curr->left;
+    }
+    return curr;
 }
+
+// Delete in Binary Serach tree
+Node* DeleteInBst(Node* root, int key)
+{
+    if(key < root->data)
+    {
+        root->left = DeleteInBst(root->left, key);
+    }
+    else if(key > root->data)
+    {
+        root->right = DeleteInBst(root->right, key);
+    }
+    // key == root->data
+    else
+    {
+        if(root->left == NULL)
+        {
+            Node* temp = root->right;
+            free(root);
+            return temp;
+        }
+        else if(root->right == NULL)
+        {
+            Node* temp = root->left;
+            free(root);
+            return temp;
+        }
+        Node* temp = inorderSucc(root->right);
+        root->data = temp->data;
+        root->right = DeleteInBst(root->right, temp->data);
+    }
+    return root;
+}
+
+void inorder(Node* root)
+{
+    if(root == NULL)
+    {
+        return;
+    }
+    inorder(root->left);
+    cout<<root->data<<" ";
+    inorder(root->right); 
+}
+
 int main()
 {
     Node *root = new Node(4);
@@ -52,6 +108,11 @@ int main()
     {
         cout<<"Key exists";
     }
+
+    inorder(root);
+    cout<<endl;
+    root = DeleteInBst(root, 2);
+    inorder(root);
+    cout<<endl;
 return 0;
 }
-// Time Complexity --> O(logn)
