@@ -1,0 +1,78 @@
+// set , multiset and unordered-set
+#include<iostream>
+#include<set>
+#include<unordered_set>
+using namespace std;
+int32_t main()
+{
+    set<int> s;
+    s.insert(1);
+    s.insert(2);
+    s.insert(2);
+    s.insert(3);
+
+    for(int i : s)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<s.size()<<endl;
+
+    s.erase(2);
+
+    for(int i : s)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+
+    // Insertion and Deleetion --> O(log N)   // for set and multiset
+
+    multiset<int> s1;
+    s1.insert(1);
+    s1.insert(2);
+    s1.insert(3);
+    s1.insert(3);
+    s1.insert(3);
+    s1.insert(3);
+    s1.insert(3);
+
+    for(int i : s1)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+    // s1.erase(3);          // erase all occurrence
+    s1.erase(s1.find(3));    // erase only one occurrence
+    
+    for(int i : s1)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+
+    // Insertion and Deletion --> O(1)     // for unordered-set
+    unordered_set<int> s2;
+    s2.insert(1);
+    s2.insert(2);
+    s2.insert(3);
+    s2.insert(3);
+    for(int i : s2)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+    s2.erase(s2.find(3));
+
+    for(int i : s2)
+    {
+        cout<<i<<" ";
+    }
+    return 0;
+}
