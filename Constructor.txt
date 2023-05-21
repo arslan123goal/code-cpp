@@ -40,3 +40,33 @@ int main()
 	n.avg();   //manually called
 	return 0;
 }
+
+
+// constructor Example
+#include<iostream>
+using namespace std;
+
+class line
+{
+    public:
+    line(float begin, float end) : stat(begin), fin(end)   // constructor
+    {}
+    float getLength()       // member funcion
+    {
+        return fin - stat;
+    }
+
+    private:
+    float stat;
+    float fin;
+};
+
+int main()
+{
+    float begin = 1.0;
+    float end = 2.5;
+    line obj(begin, end);
+    float length = obj.getLength();
+    cout<<"Length is: "<<length<<endl;
+return 0;
+}
